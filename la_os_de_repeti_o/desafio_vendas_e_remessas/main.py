@@ -15,16 +15,19 @@ shipment_received = [["Apples", 50], ["Bananas", 70], ["Oranges", 30], ["Mangoes
 print("=" * 30)
 print("STOCK LEVELS")
 print("=" * 30)
-#PERCORRER A LISTA DE PRODUTOS LOOP
+
+#Percorre a lista e imprime o estoque atual
 for update in range(len(products)):
     products[update][1] = products[update][1] - units_sold[update][1]
-    print(f"Stock levels for item: {update + 1}: {products[update]}")
+    print(f"Stock levels for item: {update + 1}: {products[update]}") # o print dentro do loop, imprime cada item numerado linha por linha
+
 #Atualizando a lista
 
 print("=" * 30)
 print("FINAL STOCK LEVELS")
 print("=" * 30)
 
+#Percorre a lista com estoque atual, atuliza somando com produtos recebidos e imprime lista atulizada em uma so linha
 for update in range(len(products)):
     products[update][1] = products[update][1] + shipment_received[update][1]
-print(f"Final stock levels for all products: {products}")
+print(f"Final stock levels for all products: {products}") #o print fora do loop imprime em uma so linha
